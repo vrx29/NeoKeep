@@ -1,0 +1,87 @@
+/* --------------------------------- */
+/* Header */
+/* --------------------------------- */
+
+nav {
+    height: 50px;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  }
+  
+  .link {
+    text-decoration: none;
+  }
+  .head-logo {
+    font-weight: 800;
+    background-image: linear-gradient(60deg, #e21143, #ffb03a);
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .nav-btn {
+    height: 32px;
+    width: 80px;
+    border: transparent;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #e21143;
+  }
+  .nav-btn:hover {
+    background-color: #d6103e;
+  }
+  
+  /* --------------------------------- */
+  /* Login */
+  /* --------------------------------- */
+  .login-card {
+    width: 40vw;
+    padding: 2rem 1rem;
+    max-width: 400px;
+    margin: 3rem auto;
+    border: 1px solid #e21143;
+  }
+  
+  form {
+    margin: 1rem 0;
+  }
+  .field-cont {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-input {
+    height: 40px;
+    margin: 0.3rem 0;
+  }
+  
+  .auth-btn {
+    margin-top: 1rem;
+    height: 40px;
+    border: transparent;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #e21143;
+  }
+  
+  .form-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-footer .link {
+    margin-left: 0.5rem;
+    color: #e21143;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
