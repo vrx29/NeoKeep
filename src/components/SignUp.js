@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { signup } from "../redux/actions/authActions";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { isLoaded, isEmpty } from "react-redux-firebase";
+import { getNotes } from "../redux/actions/noteActions";
 
 function SignUp(props) {
   let navigate = useNavigate();
@@ -12,6 +12,12 @@ function SignUp(props) {
     email: "",
     password: "",
   });
+  useEffect(() => {
+    if (props.auth?.uid) {
+      props.getNotes();
+      navigate("/");
+    }
+  }, [props, navigate]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -78,9 +84,17 @@ function SignUp(props) {
   );
 }
 
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+    auth: state.firebase.auth,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     signUp: (userData) => dispatch(signup(userData)),
+    getNotes: () => dispatch(getNotes()),
   };
 };
-export default connect(null, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

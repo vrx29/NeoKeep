@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { signin } from "../redux/actions/authActions";
+import { getNotes } from "../redux/actions/noteActions";
 
 function Login(props) {
   const [email, setEmail] = useState("");
@@ -10,15 +11,17 @@ function Login(props) {
 
   useEffect(() => {
     if (props.auth?.uid) {
+      props.getNotes();
       navigate("/");
     }
-  }, [props]);
+  }, [props,navigate]);
   const login = (e) => {
     e.preventDefault();
     const userObj = {
       email: email,
       password: password,
     };
+    props.getNotes();
     props.signIn(userObj);
     navigate("/");
   };
@@ -74,6 +77,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    getNotes: () => dispatch(getNotes()),
     signIn: (userData) => dispatch(signin(userData)),
   };
 };

@@ -1,4 +1,3 @@
-import Search from "./Search";
 import { connect } from "react-redux";
 import CreateNote from "./CreateNote";
 import PinnedNotes from "./PinnedNotes";
@@ -7,7 +6,6 @@ import OtherNotes from "./OtherNotes";
 function Dashboard(props) {
   return (
     <div className="dashboard">
-      <Search />
       <CreateNote />
       <PinnedNotes />
       <OtherNotes />

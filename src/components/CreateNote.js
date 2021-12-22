@@ -17,6 +17,7 @@ function CreateNote({ addNote }) {
     setTitle("");
     setNoteContent("");
     setNoteColor("bar-white");
+    setIsPinned(false);
   };
   const submitNote = () => {
     let note = {
@@ -60,7 +61,7 @@ function CreateNote({ addNote }) {
               <ColorBar setColor={setNoteColor} />
             </div>
             <div>
-              <button onClick={() => setIsActive(false)} className="clear-btn">
+              <button onClick={() => clearContent()} className="clear-btn">
                 CLEAR
               </button>
               <button onClick={submitNote} className="add-btn">

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 import { isLoaded, isEmpty } from "react-redux-firebase";
 import { connect, useSelector } from "react-redux";
 import { signout } from "../redux/actions/authActions";

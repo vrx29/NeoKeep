@@ -1,7 +1,6 @@
 import * as authActions from "./actions";
 
 const signinReq = () => {
-  console.log("hello Req");
   return {
     type: authActions.SIGN_IN_REQUEST,
   };
